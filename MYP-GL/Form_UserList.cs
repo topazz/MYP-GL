@@ -31,7 +31,8 @@ namespace MYP_GL
 
         private void but_AddUser_Click(object sender, EventArgs e)
         {
-
+            Program.userlistwindow.Visible = false;
+            (new Form_AddUser()).Show();
         }
     }
 }
