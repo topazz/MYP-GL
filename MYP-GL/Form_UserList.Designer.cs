@@ -51,6 +51,7 @@
             this.but_AddUser.TabIndex = 1;
             this.but_AddUser.Text = "Add User";
             this.but_AddUser.UseVisualStyleBackColor = true;
+            this.but_AddUser.Click += new System.EventHandler(this.but_AddUser_Click);
             // 
             // but_RemoveUser
             // 
@@ -79,7 +80,7 @@
             this.but_SelectUser.Text = "Select User";
             this.but_SelectUser.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // Form_UserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -90,7 +91,7 @@
             this.Controls.Add(this.but_AddUser);
             this.Controls.Add(this.lb_users);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Form1";
+            this.Name = "Form_UserList";
             this.Text = "MYP Grade List";
             this.ResumeLayout(false);
 
