@@ -16,5 +16,76 @@ namespace MYP_GL
         {
             InitializeComponent();
         }
+
+        private void Form_AddUser_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.userlistwindow.Visible = true;
+        }
+
+        private void but_Cancel_Click(object sender, EventArgs e)
+        {
+            Program.userlistwindow.adduser.Close();
+        }
+
+        private void but_AddUser_Click(object sender, EventArgs e)
+        {
+            tb_FirstName.Text = tb_FirstName.Text.TrimEnd(' ');
+            tb_FirstName.Text = tb_FirstName.Text.TrimStart(' ');
+            tb_LastName.Text = tb_LastName.Text.TrimEnd(' ');
+            tb_LastName.Text = tb_LastName.Text.TrimStart(' ');
+            tb_Class.Text = tb_Class.Text.TrimEnd(' ');
+            tb_Class.Text = tb_Class.Text.TrimStart(' ');
+            tb_StudentID.Text = tb_StudentID.Text.TrimEnd(' ');
+            tb_StudentID.Text = tb_StudentID.Text.TrimStart(' ');
+            if (tb_FirstName.Text == "" || tb_LastName.Text == "" || tb_Class.Text == "")
+            {
+                MessageBox.Show("Please make sure all textboxes marked with * are filled in correctly!");
+                return;
+            }
+            bool containsillegalchars = false;
+            foreach (char c in tb_FirstName.Text.ToCharArray())
+            {
+                if (!char.IsLetter(c))
+                {
+                    containsillegalchars = true;
+                }
+            }
+            if (tb_FirstName.Text.Contains(' ') || containsillegalchars)
+            {
+                MessageBox.Show("The first name can't contain any whitespaces, numbers, or symbols!");
+                return;
+            }
+            containsillegalchars = false;
+            foreach (char c in tb_LastName.Text.ToCharArray())
+            {
+                if (!char.IsLetter(c))
+                {
+                    containsillegalchars = true;
+                }
+            }
+            if (tb_LastName.Text.Contains(' ') || containsillegalchars)
+            {
+                MessageBox.Show("The last name can't contain any whitespaces, numbers, or symbols!");
+                return;
+            }
+            if (tb_Class.Text.Contains('$'))
+            {
+                MessageBox.Show("The Class name may not contain the '$' character!");
+                return;
+            }
+            if (tb_StudentID.Text != "")
+            {
+                try
+                {
+                    int resultint = Convert.ToInt32(tb_StudentID.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("The student number needs to be a valid number!");
+                    return;
+                }
+            }
+            MessageBox.Show("SUCCESS");
+        }
     }
 }

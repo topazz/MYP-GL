@@ -45,9 +45,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "First Name:";
+            this.label1.Text = "First Name:*";
             // 
             // tb_FirstName
             // 
@@ -68,9 +68,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(15, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Last Name:";
+            this.label2.Text = "Last Name:*";
             // 
             // tb_Class
             // 
@@ -91,18 +91,18 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(15, 91);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Class";
+            this.label3.Text = "Class:*";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(176, 91);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 13);
+            this.label4.Size = new System.Drawing.Size(87, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Student Number";
+            this.label4.Text = "Student Number:";
             // 
             // but_AddUser
             // 
@@ -112,6 +112,7 @@
             this.but_AddUser.TabIndex = 8;
             this.but_AddUser.Text = "Add User";
             this.but_AddUser.UseVisualStyleBackColor = true;
+            this.but_AddUser.Click += new System.EventHandler(this.but_AddUser_Click);
             // 
             // but_Cancel
             // 
@@ -121,6 +122,7 @@
             this.but_Cancel.TabIndex = 9;
             this.but_Cancel.Text = "Cancel";
             this.but_Cancel.UseVisualStyleBackColor = true;
+            this.but_Cancel.Click += new System.EventHandler(this.but_Cancel_Click);
             // 
             // Form_AddUser
             // 
@@ -139,6 +141,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form_AddUser";
             this.Text = "Form_AddUser";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_AddUser_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -14,7 +14,7 @@ namespace MYP_GL
     public partial class Form_UserList : Form
     {
         public List<string> Users = new List<string>();
-
+        public Form_AddUser adduser;
         public Form_UserList()
         {
             InitializeComponent();
@@ -32,7 +32,8 @@ namespace MYP_GL
         private void but_AddUser_Click(object sender, EventArgs e)
         {
             Program.userlistwindow.Visible = false;
-            (new Form_AddUser()).Show();
+            adduser = new Form_AddUser();
+            adduser.Show();
         }
     }
 }
