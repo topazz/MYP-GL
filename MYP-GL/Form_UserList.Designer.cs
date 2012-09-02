@@ -70,6 +70,7 @@
             this.but_EditUser.TabIndex = 3;
             this.but_EditUser.Text = "Edit User";
             this.but_EditUser.UseVisualStyleBackColor = true;
+            this.but_EditUser.Click += new System.EventHandler(this.but_EditUser_Click);
             // 
             // but_SelectUser
             // 
@@ -99,7 +100,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lb_users;
+        public System.Windows.Forms.ListBox lb_users;
         private System.Windows.Forms.Button but_AddUser;
         private System.Windows.Forms.Button but_RemoveUser;
         private System.Windows.Forms.Button but_EditUser;

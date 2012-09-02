@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace MYP_GL
 {
     public partial class Form_AddUser : Form
@@ -24,7 +24,7 @@ namespace MYP_GL
 
         private void but_Cancel_Click(object sender, EventArgs e)
         {
-            Program.userlistwindow.adduser.Close();
+            Program.adduser.Close();
         }
 
         private void but_AddUser_Click(object sender, EventArgs e)
@@ -85,7 +85,19 @@ namespace MYP_GL
                     return;
                 }
             }
-            MessageBox.Show("SUCCESS");
+            Program.Users.Add(new Entities.User(tb_FirstName.Text, tb_LastName.Text, tb_Class.Text, tb_StudentID.Text));
+            File.Delete(Environment.CurrentDirectory + "/users.txt");
+            File.Create(Environment.CurrentDirectory + "/users.txt").Close();
+            string writelines = "";
+            foreach (Entities.User who in Program.Users.ToArray())
+            {
+                writelines = writelines + who.FirstName + "$" + who.LastName + "$" + who.Class + "$" + who.StudentID + "|";
+            }
+            writelines = writelines.TrimEnd('|');
+            File.WriteAllLines(Environment.CurrentDirectory + "/users.txt", writelines.Split('|'));
+            Program.userlistwindow.Visible = true;
+            Program.refreshlistbox();
+            Program.adduser.Close();
         }
     }
 }
