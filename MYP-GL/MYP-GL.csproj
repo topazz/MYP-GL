@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4AD81B80-976D-47A4-862F-443BBAADE490}</ProjectGuid>
+    <ProjectGuid>{E6F44578-ECDD-44D6-A6C6-C887D64A78BF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MYP_GL</RootNamespace>
@@ -44,26 +44,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Grade.cs" />
+    <Compile Include="Entities\Subject.cs" />
+    <Compile Include="fEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEditUser.Designer.cs">
+      <DependentUpon>fEditUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Form_UserList.cs">
+    <Compile Include="fAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_UserList.Designer.cs">
-      <DependentUpon>Form_UserList.cs</DependentUpon>
+    <Compile Include="fAddUser.Designer.cs">
+      <DependentUpon>fAddUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_AddUser.cs">
+    <Compile Include="fSubjectList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_AddUser.Designer.cs">
-      <DependentUpon>Form_AddUser.cs</DependentUpon>
+    <Compile Include="fSubjectList.Designer.cs">
+      <DependentUpon>fSubjectList.cs</DependentUpon>
     </Compile>
+    <Compile Include="fUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fUserList.Designer.cs">
+      <DependentUpon>fUserList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralVariables.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_AddUser.resx">
-      <DependentUpon>Form_AddUser.cs</DependentUpon>
+    <EmbeddedResource Include="fEditUser.resx">
+      <DependentUpon>fEditUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_UserList.resx">
-      <DependentUpon>Form_UserList.cs</DependentUpon>
+    <EmbeddedResource Include="fAddUser.resx">
+      <DependentUpon>fAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSubjectList.resx">
+      <DependentUpon>fSubjectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fUserList.resx">
+      <DependentUpon>fUserList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
