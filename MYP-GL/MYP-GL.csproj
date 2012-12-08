@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Entities\Grade.cs" />
     <Compile Include="Entities\Subject.cs" />
+    <Compile Include="Entities\Subjects\Wiskunde.cs" />
     <Compile Include="fEditUser.cs">
       <SubType>Form</SubType>
     </Compile>

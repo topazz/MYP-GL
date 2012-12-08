@@ -6,39 +6,54 @@ using System.Threading.Tasks;
 
 namespace MYP_GL.Entities
 {
-    public class Subject
+    public abstract class Subject
     {
-        public Dictionary<string, Grade> criteria = new Dictionary<string, Grade>();
-        public string name;
-        public List<string> boundaries = new List<string>();
-        public Subject(string name)
+        public static List<Subject> subjects = new List<Subject>();
+        public static void init_subjects()
         {
-            this.name = name;
+
         }
-        public override string ToString()
+        public abstract List<string> boundaries { get; }
+        public abstract void init()
         {
-           return name;
+            //Default
         }
-        public Grade getOverall()
+        public abstract string name()
         {
-            int score = 0;
-            List<string> list = new List<string>(criteria.Keys);
-            foreach (string key in list)
+            return "Unknown Subject";
+        }
+        public Grade A;
+        public Grade B;
+        public Grade C;
+        public Grade D;
+        public Grade E;
+        public Grade F;
+        public Grade Overall;
+        public void recalculateFinal()
+        {
+            Grade A1 = A;
+            Grade B1 = B;
+            Grade C1 = C;
+            Grade D1 = D;
+            Grade E1 = E;
+            Grade F1 = F;
+            Overall = null;
+            if (A1 == null) { A1 = new Grade(0, 10); }
+            int score = A1.value + B1.value + C1.value + D1.value + E1.value + F1.value;
+            foreach (string boundary in boundaries.ToArray())
             {
-                score += criteria[key].value;
-            }
-            int finalvalue = 0;
-            foreach (string boundary in boundaries)
-            {
-                int a = Convert.ToInt32(boundary.Split('|')[0]);
-                int b = Convert.ToInt32(boundary.Split('|')[1]);
+                int a = Convert.ToInt32(boundary.Split('-')[0]);
+                int b = Convert.ToInt32(boundary.Split('-')[1]);
+                int c = Convert.ToInt32(boundary.Split('-')[2]);
                 if (score >= a && score <= b)
                 {
-                    finalvalue = Convert.ToInt32(boundary.Split('|')[2]);
-                    break;
+                    Overall = new Grade(c, 7);
                 }
             }
-            return new Grade(finalvalue, 7);
+            if (Overall == null)
+            {
+                Overall = new Grade(0, 7);
+            }
         }
 
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MYP_GL.Entities
 {
-    class Grade
+    public class Grade
     {
         public int value;
         public int scale;
