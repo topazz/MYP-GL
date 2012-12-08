@@ -11,6 +11,17 @@ namespace MYP_GL.Entities
     {
         //STATIC SHIT
         public List<Subject> subjects = new List<Subject>();
+        public void InitSubjects()
+        {
+            subjects.Clear();
+            //Creating Subjects
+            subjects.Add(new Wiskunde());
+            //Done Creating Subjects
+            foreach (Subject su in subjects.ToArray())
+            {
+                su.init();
+            }
+        }
         public static List<Entities.User> UserList = new List<Entities.User>();
         public static void SaveAllUsers()
         {
