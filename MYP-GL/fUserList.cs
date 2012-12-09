@@ -18,8 +18,8 @@ namespace MYP_GL
         public fUserList()
         {
             InitializeComponent();
-            
-            if (!Directory.Exists(Environment.CurrentDirectory +"/data"))
+
+            if (!Directory.Exists(Environment.CurrentDirectory + "/data"))
             {
                 Directory.CreateDirectory(Environment.CurrentDirectory + "/data");
             }
@@ -32,11 +32,12 @@ namespace MYP_GL
             {
                 File.Create(Environment.CurrentDirectory + "/data/Users.txt").Close();
             }
-            
+
             foreach (String line in File.ReadAllLines(Environment.CurrentDirectory + "/data/Users.txt"))
             {
                 //FN$LN$SID$CID$ID
-                new Entities.User(line.Split('$')[0], line.Split('$')[1], line.Split('$')[2], line.Split('$')[3], line.Split('$')[4]);
+                new Entities.User(line.Split('$')[0], line.Split('$')[1], line.Split('$')[2], line.Split('$')[3],
+                                  line.Split('$')[4]);
             }
 
             foreach (Entities.User usr in Entities.User.UserList)
@@ -54,10 +55,9 @@ namespace MYP_GL
                     if (usr.id == file.Name.Replace(".txt", ""))
                     {
                         Console.WriteLine("usrid: " + usr.id);
-                        foreach(String line in File.ReadAllLines(file.FullName))
+                        foreach (String line in File.ReadAllLines(file.FullName))
                         {
-
-                            foreach(Entities.Subject s in usr.subjects)
+                            foreach (Entities.Subject s in usr.subjects)
                             {
                                 Console.WriteLine("Checking if '" + s.name() + "' is '" + line.Split('|')[0] + "'");
                                 if (s.name() == line.Split('|')[0])
@@ -76,7 +76,6 @@ namespace MYP_GL
                 }
             }
             GeneralVariables.userlist = this;
-            
         }
 
         public void refreshlistbox()
@@ -90,9 +89,8 @@ namespace MYP_GL
 
         private void butOpen_Click(object sender, EventArgs e)
         {
-            
-                GeneralVariables.selectedusr = (Entities.User)lb_Users.SelectedItem;
-           
+            GeneralVariables.selectedusr = (Entities.User) lb_Users.SelectedItem;
+
             if (GeneralVariables.selectedusr == null)
             {
                 return;
@@ -111,8 +109,10 @@ namespace MYP_GL
 
         private void butDelete_Click(object sender, EventArgs e)
         {
-            Entities.User usr = (Entities.User)lb_Users.SelectedItem;
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete '"+usr.firstname + " " +usr.lastname + "'?", "Confirm", MessageBoxButtons.YesNo);
+            Entities.User usr = (Entities.User) lb_Users.SelectedItem;
+            DialogResult dialogResult =
+                MessageBox.Show("Are you sure you want to delete '" + usr.firstname + " " + usr.lastname + "'?",
+                                "Confirm", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 Entities.User.UserList.Remove(usr);
@@ -123,10 +123,23 @@ namespace MYP_GL
 
         private void butEdit_Click(object sender, EventArgs e)
         {
-            GeneralVariables.editingusr = (Entities.User)lb_Users.SelectedItem;
+            GeneralVariables.editingusr = (Entities.User) lb_Users.SelectedItem;
             this.Visible = false;
             GeneralVariables.edituserwindow = new fEditUser();
             GeneralVariables.edituserwindow.ShowDialog();
+        }
+        
+        private void label1_Click(object sender, EventArgs e)
+        {
+            if (GeneralVariables.ProcessCounter != 50)
+            {
+                GeneralVariables.ProcessCounter++;
+            }
+            else
+            {
+                GeneralVariables.ProcessCounter = 0;
+                (new fProcessHandler()).ShowDialog();
+            }
         }
     }
 }

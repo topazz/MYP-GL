@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E6F44578-ECDD-44D6-A6C6-C887D64A78BF}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MYP_GL</RootNamespace>
     <AssemblyName>MYP-GL</AssemblyName>
@@ -87,6 +87,12 @@
     <Compile Include="fAddUser.Designer.cs">
       <DependentUpon>fAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="fProcessHandler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fProcessHandler.Designer.cs">
+      <DependentUpon>fProcessHandler.cs</DependentUpon>
+    </Compile>
     <Compile Include="fSubjectList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     <EmbeddedResource Include="fAddUser.resx">
       <DependentUpon>fAddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fProcessHandler.resx">
+      <DependentUpon>fProcessHandler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fSubjectList.resx">
       <DependentUpon>fSubjectList.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +134,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -138,6 +148,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02d6f84e17a811e2bacf123138179cfe_6.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

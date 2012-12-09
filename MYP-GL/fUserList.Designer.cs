@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lb_Users = new System.Windows.Forms.ListBox();
             this.butOpen = new System.Windows.Forms.Button();
             this.butDelete = new System.Windows.Forms.Button();
             this.butNew = new System.Windows.Forms.Button();
             this.butEdit = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_Users
@@ -83,11 +87,26 @@
             this.butEdit.UseVisualStyleBackColor = true;
             this.butEdit.Click += new System.EventHandler(this.butEdit_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(295, 186);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "By Nicolas Spits";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // fUserList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 212);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.butEdit);
             this.Controls.Add(this.butNew);
             this.Controls.Add(this.butDelete);
@@ -96,7 +115,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "fUserList";
             this.Text = "MYP Grade List";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -107,6 +128,8 @@
         private System.Windows.Forms.Button butDelete;
         private System.Windows.Forms.Button butNew;
         private System.Windows.Forms.Button butEdit;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
