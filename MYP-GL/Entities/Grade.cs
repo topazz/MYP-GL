@@ -15,6 +15,11 @@ namespace MYP_GL.Entities
             this.value = value;
             this.scale = scale;
         }
+        public Grade(string value, string scale)
+        {
+            this.value = Convert.ToInt32(value);
+            this.scale = Convert.ToInt32(scale);
+        }
         public override string ToString()
         {
             return value.ToString() + "/" + scale.ToString();

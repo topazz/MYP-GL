@@ -28,8 +28,8 @@ namespace MYP_GL
             GeneralVariables.userlist.refreshlistbox();
             GeneralVariables.userlist.Visible = true;
             GeneralVariables.adduserwindow = null;
-            Entities.User.SaveAllUsers();
             usr.InitSubjects();
+            Entities.User.SaveAllUsers();
             this.Close();
         }
 

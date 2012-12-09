@@ -54,7 +54,21 @@ namespace MYP_GL.Entities
                 linelist.Add(usr.firstname + "$" + usr.lastname + "$" + usr.studentid + "$" + usr.classid + "$" + usr.id);
             }
             File.WriteAllLines(Environment.CurrentDirectory + "/data/Users.txt", linelist.ToArray());
-
+            DirectoryInfo downloadedMessageInfo = new DirectoryInfo(Environment.CurrentDirectory + "/data/grades");
+            foreach (FileInfo file in downloadedMessageInfo.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (Entities.User usr in Entities.User.UserList)
+            {
+                File.Create(Environment.CurrentDirectory + "/data/grades/" + usr.id + ".txt").Close();
+                List<string> lines = new List<string>();
+                foreach (Subject s in usr.subjects.ToArray())
+                {
+                    lines.Add(s.name() + "|" + s.A + "|" + s.B + "|" + s.C + "|" + s.D + "|" + s.E + "|" + s.F);
+                }
+                File.WriteAllLines(Environment.CurrentDirectory + "/data/grades/" + usr.id + ".txt", lines.ToArray());
+            }
         }
         public static bool idExists(int id)
         {

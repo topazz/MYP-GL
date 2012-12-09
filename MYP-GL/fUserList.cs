@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MYP_GL.Entities;
 
 
 namespace MYP_GL
@@ -21,6 +22,10 @@ namespace MYP_GL
             if (!Directory.Exists(Environment.CurrentDirectory +"/data"))
             {
                 Directory.CreateDirectory(Environment.CurrentDirectory + "/data");
+            }
+            if (!Directory.Exists(Environment.CurrentDirectory + "/data/grades"))
+            {
+                Directory.CreateDirectory(Environment.CurrentDirectory + "/data/grades");
             }
 
             if (!File.Exists(Environment.CurrentDirectory + "/data/Users.txt"))
@@ -37,8 +42,35 @@ namespace MYP_GL
             foreach (Entities.User usr in Entities.User.UserList)
             {
                 lb_Users.Items.Add(usr);
+                usr.InitSubjects();
+            }
+            DirectoryInfo downloadedMessageInfo = new DirectoryInfo(Environment.CurrentDirectory + "/data/grades");
+            foreach (FileInfo file in downloadedMessageInfo.GetFiles())
+            {
+                foreach (Entities.User usr in Entities.User.UserList)
+                {
+                    if (usr.id == file.Name)
+                    {
+                        foreach(String line in File.ReadAllLines(file.FullName))
+                        {
+                            foreach(Entities.Subject s in usr.subjects)
+                            {
+                                if (s.name() == line.Split('|')[0])
+                                {
+                                    s.A = new Grade(line.Split('|')[1].Split('/')[0], line.Split('|')[1].Split('/')[1]);
+                                    s.B = new Grade(line.Split('|')[2].Split('/')[0], line.Split('|')[2].Split('/')[1]);
+                                    s.C = new Grade(line.Split('|')[3].Split('/')[0], line.Split('|')[3].Split('/')[1]);
+                                    s.D = new Grade(line.Split('|')[4].Split('/')[0], line.Split('|')[4].Split('/')[1]);
+                                    s.E = new Grade(line.Split('|')[5].Split('/')[0], line.Split('|')[5].Split('/')[1]);
+                                    s.F = new Grade(line.Split('|')[6].Split('/')[0], line.Split('|')[6].Split('/')[1]);
+                                }
+                            }
+                        }
+                    }
+                }
             }
             GeneralVariables.userlist = this;
+            
         }
 
         public void refreshlistbox()
@@ -60,7 +92,8 @@ namespace MYP_GL
                 return;
             }
             this.Visible = false;
-            (new fSubjectList()).ShowDialog();
+            GeneralVariables.subjectlistwindow = new fSubjectList();
+            GeneralVariables.subjectlistwindow.ShowDialog();
         }
 
         private void butNew_Click(object sender, EventArgs e)

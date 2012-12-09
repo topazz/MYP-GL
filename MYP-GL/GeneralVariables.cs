@@ -12,6 +12,7 @@ namespace MYP_GL
         public static fUserList userlist = null;
         public static fAddUser adduserwindow = null;
         public static fEditUser edituserwindow = null;
+        public static fSubjectList subjectlistwindow = null;
         public static Entities.User editingusr = null;
         public static Entities.User selectedusr = null;
     }
