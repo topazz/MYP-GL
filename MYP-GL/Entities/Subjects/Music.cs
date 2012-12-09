@@ -8,7 +8,7 @@ namespace MYP_GL.Entities.Subjects
 {
     class Music : Subject
     {
-        public override List<string> boundaries = new List<string>();
+ 
 
         public override void init()
         {

@@ -46,13 +46,21 @@ namespace MYP_GL
             lb_Users.Items.Clear();
             foreach (Entities.User usr in Entities.User.UserList)
             {
-                lb_Users.Items.Add(usr.firstname + " " + usr.lastname + " (" + usr.studentid + ", " + usr.classid + ")");
+                lb_Users.Items.Add(usr);
             }
         }
 
         private void butOpen_Click(object sender, EventArgs e)
         {
-
+            
+                GeneralVariables.selectedusr = (Entities.User)lb_Users.SelectedItem;
+           
+            if (GeneralVariables.selectedusr == null)
+            {
+                return;
+            }
+            this.Visible = false;
+            (new fSubjectList()).ShowDialog();
         }
 
         private void butNew_Click(object sender, EventArgs e)

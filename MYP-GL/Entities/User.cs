@@ -15,11 +15,25 @@ namespace MYP_GL.Entities
         {
             subjects.Clear();
             //Creating Subjects
-<<<<<<< HEAD
-            subjects.Add(new Wiskunde());
-=======
+            subjects.Add(new Subjects.Chemistry());
+            subjects.Add(new Subjects.Dutch());
+            subjects.Add(new Subjects.Economics());
+            subjects.Add(new Subjects.English12());
+            subjects.Add(new Subjects.English34());
+            subjects.Add(new Subjects.French());
+            subjects.Add(new Subjects.Geography());
+            subjects.Add(new Subjects.German());
+            subjects.Add(new Subjects.History());
+            subjects.Add(new Subjects.Humanities());
+            subjects.Add(new Subjects.Music());
+            subjects.Add(new Subjects.PerformingArts());
+            subjects.Add(new Subjects.Physics());
+            subjects.Add(new Subjects.Science());
+            subjects.Add(new Subjects.SocialStudies());
+            subjects.Add(new Subjects.Spanish());
+            subjects.Add(new Subjects.Technology());
+            subjects.Add(new Subjects.Visual_Arts());
             subjects.Add(new Subjects.Wiskunde());
->>>>>>> Da Subjects
             //Done Creating Subjects
             foreach (Subject su in subjects.ToArray())
             {

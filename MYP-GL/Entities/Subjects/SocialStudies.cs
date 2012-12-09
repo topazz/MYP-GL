@@ -8,7 +8,7 @@ namespace MYP_GL.Entities.Subjects
 {
     class SocialStudies : Subject
     {
-        public override List<string> boundaries = new List<string>();
+ 
 
         public override void init()
         {

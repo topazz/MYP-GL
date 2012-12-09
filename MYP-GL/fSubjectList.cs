@@ -29,12 +29,33 @@ namespace MYP_GL
             foreach (Entities.Subject sub in GeneralVariables.selectedusr.subjects.ToArray())
             {
                 lb_subjects.Items.Add(sub);
-                lb_grades.Items.Add(sub.getOverall());
+                if (sub.Overall == null)
+                {
+                    lb_grades.Items.Add("-");
+                }
+                else
+                {
+                    lb_grades.Items.Add(sub.Overall);
+                }
             }
         }
 
         private void fSubjectList_Load(object sender, EventArgs e)
         {
+            reload_Subjects();
+            lUser.Text = GeneralVariables.selectedusr.studentid;
+        }
+
+        private void but_back_Click(object sender, EventArgs e)
+        {
+            GeneralVariables.userlist.Visible = true;
+            GeneralVariables.selectedusr = null;
+            this.Close();
+        }
+
+        private void fSubjectList_FormClosing(object sender, FormClosingEventArgs e)
+        {GeneralVariables.userlist.Visible = true;
+            GeneralVariables.selectedusr = null;
 
         }
     }

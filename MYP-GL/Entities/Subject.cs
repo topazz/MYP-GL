@@ -13,14 +13,12 @@ namespace MYP_GL.Entities
         public Grade E;
         public Grade F;
         public Grade Overall;
-        public abstract List<string> boundaries { get; }
+
+        public List<string> boundaries = new List<string>();
 
         public abstract void init();
 
-        public abstract string name()
-        {
-            return "Unknown Subject";
-        }
+        public abstract string name();
 
         public void recalculateFinal()
         {
@@ -50,6 +48,11 @@ namespace MYP_GL.Entities
             {
                 Overall = new Grade(0, 7);
             }
+        }
+
+        public override string ToString()
+        {
+            return name();
         }
     }
 }

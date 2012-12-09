@@ -32,12 +32,10 @@
             this.lb_subjects = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lb_grades = new System.Windows.Forms.ListBox();
-            this.but_Edit = new System.Windows.Forms.Button();
-            this.but_Grades = new System.Windows.Forms.Button();
-            this.but_delete = new System.Windows.Forms.Button();
-            this.but_new = new System.Windows.Forms.Button();
+            this.but_edit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lUser = new System.Windows.Forms.Label();
+            this.but_back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -74,46 +72,19 @@
             this.lb_grades.Size = new System.Drawing.Size(69, 251);
             this.lb_grades.TabIndex = 3;
             // 
-            // but_Edit
+            // but_edit
             // 
-            this.but_Edit.Location = new System.Drawing.Point(229, 30);
-            this.but_Edit.Name = "but_Edit";
-            this.but_Edit.Size = new System.Drawing.Size(93, 23);
-            this.but_Edit.TabIndex = 4;
-            this.but_Edit.Text = "Edit Subject";
-            this.but_Edit.UseVisualStyleBackColor = true;
-            // 
-            // but_Grades
-            // 
-            this.but_Grades.Location = new System.Drawing.Point(229, 60);
-            this.but_Grades.Name = "but_Grades";
-            this.but_Grades.Size = new System.Drawing.Size(93, 23);
-            this.but_Grades.TabIndex = 5;
-            this.but_Grades.Text = "Manage Grades";
-            this.but_Grades.UseVisualStyleBackColor = true;
-            // 
-            // but_delete
-            // 
-            this.but_delete.Location = new System.Drawing.Point(229, 90);
-            this.but_delete.Name = "but_delete";
-            this.but_delete.Size = new System.Drawing.Size(93, 23);
-            this.but_delete.TabIndex = 6;
-            this.but_delete.Text = "Delete Subject";
-            this.but_delete.UseVisualStyleBackColor = true;
-            // 
-            // but_new
-            // 
-            this.but_new.Location = new System.Drawing.Point(230, 120);
-            this.but_new.Name = "but_new";
-            this.but_new.Size = new System.Drawing.Size(92, 23);
-            this.but_new.TabIndex = 7;
-            this.but_new.Text = "New Subject";
-            this.but_new.UseVisualStyleBackColor = true;
+            this.but_edit.Location = new System.Drawing.Point(229, 30);
+            this.but_edit.Name = "but_edit";
+            this.but_edit.Size = new System.Drawing.Size(92, 23);
+            this.but_edit.TabIndex = 7;
+            this.but_edit.Text = "Edit Subject";
+            this.but_edit.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(230, 150);
+            this.label3.Location = new System.Drawing.Point(230, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 8;
@@ -122,23 +93,31 @@
             // lUser
             // 
             this.lUser.AutoSize = true;
-            this.lUser.Location = new System.Drawing.Point(230, 163);
+            this.lUser.Location = new System.Drawing.Point(230, 69);
             this.lUser.Name = "lUser";
             this.lUser.Size = new System.Drawing.Size(44, 13);
             this.lUser.TabIndex = 9;
             this.lUser.Text = "testuser";
+            // 
+            // but_back
+            // 
+            this.but_back.Location = new System.Drawing.Point(229, 259);
+            this.but_back.Name = "but_back";
+            this.but_back.Size = new System.Drawing.Size(92, 22);
+            this.but_back.TabIndex = 10;
+            this.but_back.Text = "Back";
+            this.but_back.UseVisualStyleBackColor = true;
+            this.but_back.Click += new System.EventHandler(this.but_back_Click);
             // 
             // fSubjectList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 293);
+            this.Controls.Add(this.but_back);
             this.Controls.Add(this.lUser);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.but_new);
-            this.Controls.Add(this.but_delete);
-            this.Controls.Add(this.but_Grades);
-            this.Controls.Add(this.but_Edit);
+            this.Controls.Add(this.but_edit);
             this.Controls.Add(this.lb_grades);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lb_subjects);
@@ -146,6 +125,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "fSubjectList";
             this.Text = "MYP GL - Subject List";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fSubjectList_FormClosing);
             this.Load += new System.EventHandler(this.fSubjectList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,12 +138,10 @@
         private System.Windows.Forms.ListBox lb_subjects;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox lb_grades;
-        private System.Windows.Forms.Button but_Edit;
-        private System.Windows.Forms.Button but_Grades;
-        private System.Windows.Forms.Button but_delete;
-        private System.Windows.Forms.Button but_new;
+        private System.Windows.Forms.Button but_edit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lUser;
+        private System.Windows.Forms.Button but_back;
 
     }
 }

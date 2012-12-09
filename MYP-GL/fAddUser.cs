@@ -24,11 +24,12 @@ namespace MYP_GL
                 MessageBox.Show("Please make sure you enter all the fields.");
                 return;
             }
-            new Entities.User(txtFirstname.Text, txtLastname.Text, txtStudentID.Text, txtClass.Text);
+            Entities.User usr = new Entities.User(txtFirstname.Text, txtLastname.Text, txtStudentID.Text, txtClass.Text);
             GeneralVariables.userlist.refreshlistbox();
             GeneralVariables.userlist.Visible = true;
             GeneralVariables.adduserwindow = null;
             Entities.User.SaveAllUsers();
+            usr.InitSubjects();
             this.Close();
         }
 
