@@ -47,16 +47,22 @@ namespace MYP_GL
             DirectoryInfo downloadedMessageInfo = new DirectoryInfo(Environment.CurrentDirectory + "/data/grades");
             foreach (FileInfo file in downloadedMessageInfo.GetFiles())
             {
+                Console.WriteLine("fname: " + file.Name);
+                Console.WriteLine("ffname: " + file.FullName);
                 foreach (Entities.User usr in Entities.User.UserList)
                 {
-                    if (usr.id == file.Name)
+                    if (usr.id == file.Name.Replace(".txt", ""))
                     {
+                        Console.WriteLine("usrid: " + usr.id);
                         foreach(String line in File.ReadAllLines(file.FullName))
                         {
+
                             foreach(Entities.Subject s in usr.subjects)
                             {
+                                Console.WriteLine("Checking if '" + s.name() + "' is '" + line.Split('|')[0] + "'");
                                 if (s.name() == line.Split('|')[0])
                                 {
+                                    Console.WriteLine("it be true lol wat...");
                                     s.A = new Grade(line.Split('|')[1].Split('/')[0], line.Split('|')[1].Split('/')[1]);
                                     s.B = new Grade(line.Split('|')[2].Split('/')[0], line.Split('|')[2].Split('/')[1]);
                                     s.C = new Grade(line.Split('|')[3].Split('/')[0], line.Split('|')[3].Split('/')[1]);

@@ -122,12 +122,63 @@ namespace MYP_GL
                     MessageBox.Show("Please make sure all grades are valid.");
                     return;
                 }
+                if (Convert.ToInt32(b_Value.Text) > 100)
+                {
+                    MessageBox.Show("Please make sure all grades are valid.");
+                    return; 
+                }
+                if (Convert.ToInt32(c_Value.Text) > 100)
+                {
+                    MessageBox.Show("Please make sure all grades are valid.");
+                    return;
+                }
+                if (Convert.ToInt32(d_Value.Text) > 100)
+                {
+                    MessageBox.Show("Please make sure all grades are valid.");
+                    return;
+                }
+                if (Convert.ToInt32(e_Value.Text) > 100)
+                {
+                    MessageBox.Show("Please make sure all grades are valid.");
+                    return;
+                }
+                if (Convert.ToInt32(f_Value.Text) > 100)
+                {
+                    MessageBox.Show("Please make sure all grades are valid.");
+                    return;
+                }
+                if (Convert.ToInt32(b_Scale.Text) > 100)
+                {
+                    MessageBox.Show("Please make sure all grades are valid.");
+                    return;
+                }
+                if (Convert.ToInt32(c_Scale.Text) > 100)
+                {
+                    MessageBox.Show("Please make sure all grades are valid.");
+                    return;
+                }
+                if (Convert.ToInt32(d_Scale.Text) > 100)
+                {
+                    MessageBox.Show("Please make sure all grades are valid.");
+                    return;
+                }
+                if (Convert.ToInt32(e_Scale.Text) > 100)
+                {
+                    MessageBox.Show("Please make sure all grades are valid.");
+                    return;
+                }
+                if (Convert.ToInt32(f_Scale.Text) > 100)
+                {
+                    MessageBox.Show("Please make sure all grades are valid.");
+                    return;
+                }
+
                 GeneralVariables.selectedsubject.A = new Grade(a_Value.Text, a_Scale.Text);
-                GeneralVariables.selectedsubject.A = new Grade(b_Value.Text, b_Scale.Text);
-                GeneralVariables.selectedsubject.A = new Grade(c_Value.Text, c_Scale.Text);
-                GeneralVariables.selectedsubject.A = new Grade(d_Value.Text, d_Scale.Text);
-                GeneralVariables.selectedsubject.A = new Grade(e_Value.Text, e_Scale.Text);
-                GeneralVariables.selectedsubject.A = new Grade(f_Value.Text, f_Scale.Text);
+                GeneralVariables.selectedsubject.B = new Grade(b_Value.Text, b_Scale.Text);
+                GeneralVariables.selectedsubject.C = new Grade(c_Value.Text, c_Scale.Text);
+                GeneralVariables.selectedsubject.D = new Grade(d_Value.Text, d_Scale.Text);
+                GeneralVariables.selectedsubject.E = new Grade(e_Value.Text, e_Scale.Text);
+                GeneralVariables.selectedsubject.F = new Grade(f_Value.Text, f_Scale.Text);
                 GeneralVariables.subjectlistwindow.reload_Subjects();
                 Entities.User.SaveAllUsers();
                 this.Close();
