@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace MYP_GL.Entities.Subjects
 {
-    class Wiskunde : Subject
+    class PerformingArts : Subject
     {
         public override List<string> boundaries = new List<string>();
 
         public override void init()
         {
-            boundaries.Add("0-4-1");
-            boundaries.Add("5-8-2");
-            boundaries.Add("9-12-3");
-            boundaries.Add("13-17-4");
-            boundaries.Add("18-21-5");
-            boundaries.Add("22-25-6");
-            boundaries.Add("26-28-7");
+            boundaries.Add("0-3-1");
+            boundaries.Add("4-8-2");
+            boundaries.Add("9-13-3");
+            boundaries.Add("14-20-4");
+            boundaries.Add("21-25-5");
+            boundaries.Add("26-30-6");
+            boundaries.Add("31-34-7");
         }
 
         public override string name()
         {
-            return "Wiskunde";
+            return "Performing Arts";
         }
     }
 }

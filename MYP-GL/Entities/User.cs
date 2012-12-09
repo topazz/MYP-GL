@@ -15,7 +15,11 @@ namespace MYP_GL.Entities
         {
             subjects.Clear();
             //Creating Subjects
+<<<<<<< HEAD
             subjects.Add(new Wiskunde());
+=======
+            subjects.Add(new Subjects.Wiskunde());
+>>>>>>> Da Subjects
             //Done Creating Subjects
             foreach (Subject su in subjects.ToArray())
             {

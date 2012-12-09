@@ -46,6 +46,24 @@
   <ItemGroup>
     <Compile Include="Entities\Grade.cs" />
     <Compile Include="Entities\Subject.cs" />
+    <Compile Include="Entities\Subjects\Chemistry.cs" />
+    <Compile Include="Entities\Subjects\Music.cs" />
+    <Compile Include="Entities\Subjects\PerformingArts.cs" />
+    <Compile Include="Entities\Subjects\Physics.cs" />
+    <Compile Include="Entities\Subjects\Science.cs" />
+    <Compile Include="Entities\Subjects\Economics.cs" />
+    <Compile Include="Entities\Subjects\Geography.cs" />
+    <Compile Include="Entities\Subjects\History.cs" />
+    <Compile Include="Entities\Subjects\Humanities.cs" />
+    <Compile Include="Entities\Subjects\English12.cs" />
+    <Compile Include="Entities\Subjects\SocialStudies.cs" />
+    <Compile Include="Entities\Subjects\Spanish.cs" />
+    <Compile Include="Entities\Subjects\French.cs" />
+    <Compile Include="Entities\Subjects\German.cs" />
+    <Compile Include="Entities\Subjects\English34.cs" />
+    <Compile Include="Entities\Subjects\Dutch.cs" />
+    <Compile Include="Entities\Subjects\Technology.cs" />
+    <Compile Include="Entities\Subjects\Visual Arts.cs" />
     <Compile Include="Entities\Subjects\Wiskunde.cs" />
     <Compile Include="fEditUser.cs">
       <SubType>Form</SubType>
