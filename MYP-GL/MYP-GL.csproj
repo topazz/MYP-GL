@@ -65,6 +65,12 @@
     <Compile Include="Entities\Subjects\Technology.cs" />
     <Compile Include="Entities\Subjects\Visual Arts.cs" />
     <Compile Include="Entities\Subjects\Wiskunde.cs" />
+    <Compile Include="fEditSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fEditSubject.Designer.cs">
+      <DependentUpon>fEditSubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="fEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="GeneralVariables.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fEditSubject.resx">
+      <DependentUpon>fEditSubject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fEditUser.resx">
       <DependentUpon>fEditUser.cs</DependentUpon>
     </EmbeddedResource>

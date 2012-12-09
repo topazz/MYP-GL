@@ -80,6 +80,7 @@
             this.but_edit.TabIndex = 7;
             this.but_edit.Text = "Edit Subject";
             this.but_edit.UseVisualStyleBackColor = true;
+            this.but_edit.Click += new System.EventHandler(this.but_edit_Click);
             // 
             // label3
             // 

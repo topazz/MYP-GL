@@ -15,5 +15,6 @@ namespace MYP_GL
         public static fSubjectList subjectlistwindow = null;
         public static Entities.User editingusr = null;
         public static Entities.User selectedusr = null;
+        public static Entities.Subject selectedsubject = null;
     }
 }

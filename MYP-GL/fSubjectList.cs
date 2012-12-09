@@ -24,10 +24,12 @@ namespace MYP_GL
 
         public void reload_Subjects()
         {
+
             lb_subjects.Items.Clear();
             lb_grades.Items.Clear();
             foreach (Entities.Subject sub in GeneralVariables.selectedusr.subjects.ToArray())
             {
+                sub.recalculateFinal();
                 lb_subjects.Items.Add(sub);
                 if (sub.Overall == null)
                 {
@@ -57,6 +59,17 @@ namespace MYP_GL
         {GeneralVariables.userlist.Visible = true;
             GeneralVariables.selectedusr = null;
 
+        }
+
+        private void but_edit_Click(object sender, EventArgs e)
+        {
+            GeneralVariables.selectedsubject = (Entities.Subject)lb_subjects.SelectedItem;
+            if (GeneralVariables.selectedsubject == null)
+            {
+                return;
+            }
+            this.Visible = false;
+            (new fEditSubject()).ShowDialog();
         }
     }
 }
