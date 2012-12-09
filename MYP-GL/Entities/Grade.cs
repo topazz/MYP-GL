@@ -17,6 +17,10 @@ namespace MYP_GL.Entities
         }
         public Grade(string value, string scale)
         {
+            if (value == "" || scale == "")
+            {
+                return;
+            }
             this.value = Convert.ToInt32(value);
             this.scale = Convert.ToInt32(scale);
         }
